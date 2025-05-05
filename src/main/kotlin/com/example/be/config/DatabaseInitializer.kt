@@ -1,9 +1,9 @@
-package com.example.BE_PTTK.config
+package com.example.be.config
 
-import com.example.BE_PTTK.model.DataSet
-import com.example.BE_PTTK.model.TypeModel
-import com.example.BE_PTTK.repository.DataSetRepository
-import com.example.BE_PTTK.repository.TypeModelRepository
+import com.example.be.model.DataSet
+import com.example.be.model.TypeModel
+import com.example.be.repository.DataSetRepository
+import com.example.be.repository.TypeModelRepository
 import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

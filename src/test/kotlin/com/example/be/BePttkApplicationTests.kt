@@ -1,4 +1,4 @@
-package com.example.BE_PTTK
+package com.example.be
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

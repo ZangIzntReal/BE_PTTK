@@ -1,7 +1,6 @@
-package com.example.BE_PTTK.model
+package com.example.be.model
 
 import jakarta.persistence.*
-import java.time.LocalDateTime
 
 @Entity
 @Table(name = "trained_models")

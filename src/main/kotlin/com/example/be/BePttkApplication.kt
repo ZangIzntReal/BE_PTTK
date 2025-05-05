@@ -1,4 +1,4 @@
-package com.example.BE_PTTK
+package com.example.be
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

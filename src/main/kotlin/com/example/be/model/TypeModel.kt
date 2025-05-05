@@ -1,10 +1,10 @@
-package com.example.BE_PTTK.model
+package com.example.be.model
 
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "data_sets")
-data class DataSet(
+@Table(name = "type_models")
+data class TypeModel(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int = 0,
@@ -15,6 +15,9 @@ data class DataSet(
     @Column
     val description: String? = null,
     
-    @OneToMany(mappedBy = "dataSet", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    @Column(nullable = false)
+    val folderModel: String,
+    
+    @OneToMany(mappedBy = "typeModel", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val trainedModels: MutableSet<TrainedModel> = mutableSetOf()
 ) 

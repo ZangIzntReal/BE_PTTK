@@ -1,8 +1,8 @@
-package com.example.BE_PTTK.service
+package com.example.be.service
 
-import com.example.BE_PTTK.exception.ResourceNotFoundException
-import com.example.BE_PTTK.model.TrainedModel
-import com.example.BE_PTTK.repository.TrainedModelRepository
+import com.example.be.exception.ResourceNotFoundException
+import com.example.be.model.TrainedModel
+import com.example.be.repository.TrainedModelRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

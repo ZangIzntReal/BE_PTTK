@@ -1,6 +1,6 @@
-package com.example.BE_PTTK.repository
+package com.example.be.repository
 
-import com.example.BE_PTTK.model.TrainedModel
+import com.example.be.model.TrainedModel
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 import java.util.Optional

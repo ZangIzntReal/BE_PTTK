@@ -1,4 +1,4 @@
-package com.example.BE_PTTK.exception
+package com.example.be.exception
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

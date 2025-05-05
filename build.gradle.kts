@@ -27,7 +27,13 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
-	
+	implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
+	implementation("jakarta.validation:jakarta.validation-api:3.0.2")
+
+
+	// Swagger / OpenAPI
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+
 	// MySQL
 	runtimeOnly("com.mysql:mysql-connector-j")
 	

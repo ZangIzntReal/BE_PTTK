@@ -1,8 +1,8 @@
-package com.example.BE_PTTK.controller
+package com.example.be.controller
 
-import com.example.BE_PTTK.model.DataSet
-import com.example.BE_PTTK.model.TypeModel
-import com.example.BE_PTTK.service.TrainService
+import com.example.be.model.DataSet
+import com.example.be.model.TypeModel
+import com.example.be.service.TrainService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 

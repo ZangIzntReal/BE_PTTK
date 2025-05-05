@@ -1,7 +1,7 @@
-package com.example.BE_PTTK.controller
+package com.example.be.controller
 
-import com.example.BE_PTTK.model.TrainedModel
-import com.example.BE_PTTK.service.ManageService
+import com.example.be.model.TrainedModel
+import com.example.be.service.ManageService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 

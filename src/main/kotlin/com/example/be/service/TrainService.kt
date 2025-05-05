@@ -1,12 +1,12 @@
-package com.example.BE_PTTK.service
+package com.example.be.service
 
-import com.example.BE_PTTK.exception.ResourceNotFoundException
-import com.example.BE_PTTK.model.DataSet
-import com.example.BE_PTTK.model.TrainedModel
-import com.example.BE_PTTK.model.TypeModel
-import com.example.BE_PTTK.repository.DataSetRepository
-import com.example.BE_PTTK.repository.TrainedModelRepository
-import com.example.BE_PTTK.repository.TypeModelRepository
+import com.example.be.exception.ResourceNotFoundException
+import com.example.be.model.DataSet
+import com.example.be.model.TrainedModel
+import com.example.be.model.TypeModel
+import com.example.be.repository.DataSetRepository
+import com.example.be.repository.TrainedModelRepository
+import com.example.be.repository.TypeModelRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.util.UUID
