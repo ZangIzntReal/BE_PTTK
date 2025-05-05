@@ -16,7 +16,7 @@ class ManageService(
     
     @Transactional
     fun updateTrainedModel(model: TrainedModel): Boolean {
-        val existingModel = trainedModelRepository.findById(model.id)
+        val existingModel = trainedModelRepository.findById(model.id).get()
             ?: throw ResourceNotFoundException("TrainedModel with ID ${model.id} not found")
             
         // Update fields that are allowed to be modified

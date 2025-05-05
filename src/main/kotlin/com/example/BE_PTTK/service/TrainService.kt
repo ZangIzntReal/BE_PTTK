@@ -20,10 +20,10 @@ class TrainService(
 ) {
     @Transactional
     fun trainModel(typeId: Int, dataSetId: Int): Boolean {
-        val typeModel = typeModelRepository.findById(typeId) 
+        val typeModel = typeModelRepository.findById(typeId).get()
             ?: throw ResourceNotFoundException("TypeModel with ID $typeId not found")
             
-        val dataSet = dataSetRepository.findById(dataSetId) 
+        val dataSet = dataSetRepository.findById(dataSetId) .get()
             ?: throw ResourceNotFoundException("DataSet with ID $dataSetId not found")
             
         // Create a new trained model instance
@@ -48,7 +48,7 @@ class TrainService(
                 delay(5000) // Simulate 5 seconds of training
                 
                 // Update model status after training
-                val updatedModel = trainedModelRepository.findById(savedModel.id)
+                val updatedModel = trainedModelRepository.findById(savedModel.id).get()
                 if (updatedModel != null) {
                     updatedModel.status = "Completed"
                     updatedModel.accuracy = 0.85 // Simulated accuracy
@@ -59,7 +59,7 @@ class TrainService(
                 }
             } catch (e: Exception) {
                 // Handle training failure
-                val updatedModel = trainedModelRepository.findById(savedModel.id)
+                val updatedModel = trainedModelRepository.findById(savedModel.id).get()
                 if (updatedModel != null) {
                     updatedModel.status = "Failed"
                     trainedModelRepository.save(updatedModel)

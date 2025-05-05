@@ -41,25 +41,3 @@ The application follows a multi-layered architecture:
 ### Configuration
 
 The application is configured to connect to a MySQL database. You can update the database configuration in `src/main/resources/application.properties`.
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/model_training_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=
-```
-
-### Running the Application
-
-```
-./gradlew bootRun
-```
-
-The application will automatically create the database schema and populate it with sample data.
-
-## Technologies Used
-
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- Kotlin
-- Kotlin Coroutines (for asynchronous operations) 
