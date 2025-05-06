@@ -19,23 +19,29 @@ class TrainService(
     private val trainedModelRepository: TrainedModelRepository
 ) {
     @Transactional
-    fun trainModel(typeId: Int, dataSetId: Int): Boolean {
+    fun trainModel(
+        typeId: Int, 
+        dataSetId: Int, 
+        customName: String? = null, 
+        customVersion: String? = null
+    ): Boolean {
         val typeModel = typeModelRepository.findById(typeId).get()
             ?: throw ResourceNotFoundException("TypeModel with ID $typeId not found")
             
-        val dataSet = dataSetRepository.findById(dataSetId) .get()
+        val dataSet = dataSetRepository.findById(dataSetId).get()
             ?: throw ResourceNotFoundException("DataSet with ID $dataSetId not found")
             
         // Create a new trained model instance
         val filePath = "${typeModel.folderModel}/${UUID.randomUUID()}.model"
+        val modelName = customName ?: "${typeModel.name} - ${dataSet.name}"
+        val modelVersion = customVersion ?: "1.0.0" // Default version if not provided
+            
         val trainedModel = TrainedModel(
-            name = "${typeModel.name} - ${dataSet.name}",
-            description = "Model trained with ${typeModel.name} using ${dataSet.name} dataset",
-            version = "1.0.0", // Initial version
-            typeModel = typeModel,
+            name = modelName,
+            version = modelVersion,
+            modelType = typeModel,
             dataSet = dataSet,
-            filePath = filePath,
-            status = "Training"
+            filePath = filePath
         )
         
         // Save the model
@@ -50,7 +56,6 @@ class TrainService(
                 // Update model status after training
                 val updatedModel = trainedModelRepository.findById(savedModel.id).get()
                 if (updatedModel != null) {
-                    updatedModel.status = "Completed"
                     updatedModel.accuracy = 0.85 // Simulated accuracy
                     updatedModel.precision = 0.83 // Simulated precision
                     updatedModel.recall = 0.87 // Simulated recall
@@ -61,7 +66,6 @@ class TrainService(
                 // Handle training failure
                 val updatedModel = trainedModelRepository.findById(savedModel.id).get()
                 if (updatedModel != null) {
-                    updatedModel.status = "Failed"
                     trainedModelRepository.save(updatedModel)
                 }
             }

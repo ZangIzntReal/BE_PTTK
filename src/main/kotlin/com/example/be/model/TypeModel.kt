@@ -1,9 +1,11 @@
 package com.example.be.model
 
 import jakarta.persistence.*
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @Entity
 @Table(name = "type_models")
+@JsonIgnoreProperties("trainedModels")
 data class TypeModel(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +19,4 @@ data class TypeModel(
     
     @Column(nullable = false)
     val folderModel: String,
-    
-    @OneToMany(mappedBy = "typeModel", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val trainedModels: MutableSet<TrainedModel> = mutableSetOf()
 ) 

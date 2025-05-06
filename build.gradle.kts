@@ -32,7 +32,7 @@ dependencies {
 
 
 	// Swagger / OpenAPI
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0")
 
 	// MySQL
 	runtimeOnly("com.mysql:mysql-connector-j")

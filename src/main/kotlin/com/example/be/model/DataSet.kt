@@ -1,9 +1,11 @@
 package com.example.be.model
 
 import jakarta.persistence.*
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @Entity
 @Table(name = "data_sets")
+@JsonIgnoreProperties("trainedModels")
 data class DataSet(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +16,4 @@ data class DataSet(
     
     @Column
     val description: String? = null,
-    
-    @OneToMany(mappedBy = "dataSet", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val trainedModels: MutableSet<TrainedModel> = mutableSetOf()
 ) 

@@ -21,7 +21,6 @@ class ManageService(
             
         // Update fields that are allowed to be modified
         existingModel.name = model.name
-        existingModel.description = model.description
         existingModel.accuracy = model.accuracy
         existingModel.precision = model.precision
         existingModel.recall = model.recall
