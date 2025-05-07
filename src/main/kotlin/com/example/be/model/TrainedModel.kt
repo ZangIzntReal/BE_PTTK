@@ -14,7 +14,7 @@ data class TrainedModel(
     var name: String,
 
     @Column(nullable = false)
-    val version: String,
+    var version: String,
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "type_model_id", nullable = false)
